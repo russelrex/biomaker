@@ -37,7 +37,7 @@ async function fetchFromGoogleSheets(): Promise<ParsedCSVRow[]> {
           }
           
           const validData = results.data.filter((row: any) => {
-            const name = row.Biomarker_Name || row['Biomarker Name'];
+            const name = row.Biomarker_Name || row['Biomaker Name'];
             if (!name || typeof name !== 'string' || name.trim().length === 0) {
               return false;
             }
@@ -102,7 +102,7 @@ async function fetchFromLocalFile(): Promise<ParsedCSVRow[]> {
           }
           
           const validData = results.data.filter((row: any) => {
-            const name = row.Biomarker_Name || row['Biomarker Name'];
+            const name = row.Biomarker_Name || row['Biomaker Name'];
             if (!name || typeof name !== 'string' || name.trim().length === 0) {
               return false;
             }
@@ -135,12 +135,12 @@ export async function fetchBiomarkerData(): Promise<ParsedCSVRow[]> {
     googleSheetsData = await fetchFromGoogleSheets();
     
     const hasMetabolic = googleSheetsData.some(row => {
-      const name = (row.Biomarker_Name || (row as any)['Biomarker Name'])?.trim();
+      const name = (row.Biomarker_Name || (row as any)['Biomaker Name'])?.trim();
       return name === 'Metabolic Health Score' || (name?.startsWith('Metabolic') && !name.includes('Graph'));
     });
     
     const hasCreatine = googleSheetsData.some(row => {
-      const name = (row.Biomarker_Name || (row as any)['Biomarker Name'])?.trim();
+      const name = (row.Biomarker_Name || (row as any)['Biomaker Name'])?.trim();
       return name === 'Creatine' || name === 'Creatinine' || (name?.toLowerCase().includes('creatin') && !name.includes('Graph'));
     });
     

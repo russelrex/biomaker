@@ -1,4 +1,4 @@
-# Biomarker Dashboard
+# Biomaker Dashboard
 
 A Next.js 14 application for visualizing and tracking biomarker health data with real-time data fetching from Google Sheets.
 

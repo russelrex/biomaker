@@ -79,27 +79,27 @@ export default function Home() {
       }
       
       const validRows = csvData.filter(row => {
-        const name = row.Biomarker_Name || (row as any)['Biomarker Name'];
+        const name = row.Biomarker_Name || (row as any)['Biomaker Name'];
         return name && typeof name === 'string' && name.trim().length > 0;
       });
       
       const filteredRows = validRows.filter(row => {
-        const name = (row.Biomarker_Name || (row as any)['Biomarker Name'])?.trim();
+        const name = (row.Biomarker_Name || (row as any)['Biomaker Name'])?.trim();
         return name && !name.includes('Graph Value') && !name.toLowerCase().includes('value:');
       });
       
       console.log('CSV Data received:', csvData.length, 'total rows');
       console.log('Valid rows:', validRows.length);
       console.log('Filtered rows (excluding Graph Value):', filteredRows.length);
-      console.log('Available biomarkers:', filteredRows.map(r => r.Biomarker_Name || (r as any)['Biomarker Name']));
+      console.log('Available biomarkers:', filteredRows.map(r => r.Biomarker_Name || (r as any)['Biomaker Name']));
       
       const metabolicHealth = filteredRows.find(row => {
-        const name = (row.Biomarker_Name || (row as any)['Biomarker Name'])?.trim();
+        const name = (row.Biomarker_Name || (row as any)['Biomaker Name'])?.trim();
         return name === 'Metabolic Health Score' || (name?.startsWith('Metabolic') && !name.includes('Graph'));
       });
       
       const creatine = filteredRows.find(row => {
-        const name = (row.Biomarker_Name || (row as any)['Biomarker Name'])?.trim();
+        const name = (row.Biomarker_Name || (row as any)['Biomaker Name'])?.trim();
         return name === 'Creatine' || name === 'Creatinine' || (name?.toLowerCase().includes('creatin') && !name.includes('Graph'));
       });
       
@@ -109,16 +109,16 @@ export default function Home() {
       
       if (!metabolicHealth) {
         console.error('Metabolic Health Score not found. Available biomarkers:', 
-          filteredRows.map(r => r.Biomarker_Name || (r as any)['Biomarker Name']));
+          filteredRows.map(r => r.Biomarker_Name || (r as any)['Biomaker Name']));
       }
       
       if (!creatine) {
         console.error('Creatine not found. Available biomarkers:', 
-          filteredRows.map(r => r.Biomarker_Name || (r as any)['Biomarker Name']));
+          filteredRows.map(r => r.Biomarker_Name || (r as any)['Biomaker Name']));
       }
       
       if (!metabolicHealth || !creatine) {
-        const availableNames = filteredRows.map(r => r.Biomarker_Name || (r as any)['Biomarker Name']).filter(Boolean);
+        const availableNames = filteredRows.map(r => r.Biomarker_Name || (r as any)['Biomaker Name']).filter(Boolean);
         throw new Error(`Required biomarker data not found in CSV. Found ${csvData.length} total rows, ${filteredRows.length} filtered rows. Available biomarkers: ${availableNames.join(', ')}`);
       }
       
