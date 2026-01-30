@@ -14,6 +14,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import GroupIcon from '@mui/icons-material/Group';
 import ScienceIcon from '@mui/icons-material/Science';
+import RefreshIcon from '@mui/icons-material/Refresh';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 import DashboardLayout from '@/src/components/DashboardLayout';
 import MetricCard from '@/src/components/MetricCard';
 import MetricCardSkeleton from '@/src/components/MetricCardSkeleton';
@@ -284,6 +287,66 @@ export default function Home() {
               />
             }
           />
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1.5,
+            mb: 3,
+            p: 2,
+            backgroundColor: '#F9FAFB',
+            borderRadius: '8px',
+            border: '1px solid #E5E7EB',
+          }}
+        >
+          <Tooltip title="Refresh data from Google Sheets">
+            <IconButton
+              onClick={handleRefresh}
+              disabled={refreshing || loading}
+              sx={{
+                color: '#4F46E5',
+                '&:hover': {
+                  backgroundColor: '#EEF2FF',
+                },
+                '&.Mui-disabled': {
+                  color: '#9CA3AF',
+                },
+              }}
+            >
+              <RefreshIcon
+                sx={{
+                  animation: refreshing ? 'spin 1s linear infinite' : 'none',
+                  '@keyframes spin': {
+                    '0%': { transform: 'rotate(0deg)' },
+                    '100%': { transform: 'rotate(360deg)' },
+                  },
+                }}
+              />
+            </IconButton>
+          </Tooltip>
+          <Box>
+            <Typography
+              variant="body2"
+              sx={{
+                fontWeight: 500,
+                color: '#111827',
+                fontSize: '14px',
+              }}
+            >
+              Refresh Data
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                color: '#6B7280',
+                fontSize: '12px',
+              }}
+            >
+              {refreshing ? 'Refreshing data...' : 'Click to fetch latest data from Google Sheets'}
+            </Typography>
+          </Box>
         </Box>
 
         {loading ? (

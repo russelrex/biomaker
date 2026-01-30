@@ -297,30 +297,6 @@ export default function DashboardLayout({
             >
               DASHBOARD
             </Typography>
-            {onRefresh && (
-              <Tooltip title="Refresh data">
-                <IconButton
-                  onClick={onRefresh}
-                  disabled={refreshing}
-                  sx={{
-                    color: '#4F46E5',
-                    '&:hover': {
-                      backgroundColor: 'rgba(79, 70, 229, 0.1)',
-                    },
-                    '&.Mui-disabled': {
-                      color: '#9CA3AF',
-                    },
-                    '@keyframes spin': {
-                      from: { transform: 'rotate(0deg)' },
-                      to: { transform: 'rotate(360deg)' },
-                    },
-                    animation: refreshing ? 'spin 1s linear infinite' : 'none',
-                  }}
-                >
-                  <RefreshIcon />
-                </IconButton>
-              </Tooltip>
-            )}
           </Toolbar>
         </AppBar>
 
