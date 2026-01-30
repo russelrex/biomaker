@@ -110,7 +110,7 @@ export default function BiomarkerModal({ data, onClose }: BiomarkerModalProps) {
                 fontSize: '14px',
               }}
             >
-              Biomaker Details
+              Biomarker Details
             </Typography>
           </Box>
           <IconButton

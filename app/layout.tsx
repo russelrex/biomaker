@@ -3,7 +3,7 @@ import "./globals.css";
 import ThemeProvider from "@/src/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Biomaker Dashboard",
+  title: "Biomarker Dashboard",
   description: "View and analyze your health biomarkers",
 };
 
