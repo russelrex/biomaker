@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Biomarker Dashboard
+
+A Next.js 14 application for visualizing and tracking biomarker health data with real-time data fetching from Google Sheets.
 
 ## Getting Started
 
@@ -16,21 +18,28 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Core Framework
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI library
 
-## Learn More
+### UI Components & Styling
+- **Material UI (MUI) v5** - Component library
+  - `@mui/material` - Core Material UI components
+  - `@mui/icons-material` - Material UI icons
+  - `@emotion/react` & `@emotion/styled` - CSS-in-JS styling solution
 
-To learn more about Next.js, take a look at the following resources:
+### Data Visualization
+- **Recharts** - Composable charting library built on React components
+  - Used for creating interactive biomarker graphs and charts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Data Processing
+- **PapaParse** - Fast and powerful CSV parser
+  - Parses CSV data from Google Sheets
+  - Handles various CSV formats and edge cases
+- **Axios** - HTTP client for fetching data from Google Sheets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Package Manager
+- **pnpm** - Fast, disk space efficient package manager

@@ -1,0 +1,3 @@
+Biomarker_Name,Unit,Male_18_39_Optimal,Male_18_39_InRange,Male_18_39_OutOfRange,Male_40_59_Optimal,Male_40_59_InRange,Male_40_59_OutOfRange,Male_60+_Optimal,Male_60+_InRange,Male_60+_OutOfRange,Female_18_39_Optimal,Female_18_39_InRange,Female_18_39_OutOfRange,Female_40_59_Optimal,Female_40_59_InRange,Female_40_59_OutOfRange,Female_60+_Optimal,Female_60+_InRange,Female_60+_OutOfRange
+Metabolic Health Score,score,75-100,60-75,<60,70-100,55-70,<55,65-100,50-65,<50,75-100,60-75,<60,70-100,55-70,<55,65-100,50-65,<50
+Creatine,mg/dL,0.7-1.2,1.2-1.5,>1.5,0.7-1.3,1.3-1.6,>1.6,0.7-1.4,1.4-1.7,>1.7,0.6-1.1,1.1-1.4,>1.4,0.6-1.2,1.2-1.5,>1.5,0.6-1.3,1.3-1.6,>1.6
